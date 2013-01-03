@@ -6,11 +6,11 @@ I use this collection personally when starting a new site, and have shared it as
 
 ## NOTES
 
-# JS
+### JS
 
 The js folder is designed to be used with CodeKit (http://incident57.com/codekit/). CodeKit will compile all the included jQuery libraries and compile them into one file called custom.js. This method is much better then manually attaching all JS files as it reduces http requests.
 
-# LESS
+### LESS
 
 The main LESS file is style.less, all the other less files are imported into this file and compiled as style.css.
 
@@ -21,10 +21,10 @@ elements.less /* Add common UI elements like fonts, colours and buttons */
 plugins.less /* CSS for jQuery plugins */
 responsive.less /* Add media queries, delete if site isn't responsive */
 
-# CSS
+### CSS
 
 Empty IE stylesheets ready for you to put styles into and the main style.css.
 
-# Images
+### Images
 
 The images folder is mostly empty, images used in the design should go into the design folder and images used in the pages content should be put in content - pretty simple. Breadcrumb images exist but Pictos is set up to handle the icons by default.
