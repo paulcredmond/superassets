@@ -8,7 +8,7 @@ I use this collection personally when starting a new site, and have shared it as
 
 ### JS
 
-The js folder is designed to be used with CodeKit (http://incident57.com/codekit/). CodeKit will compile all the included jQuery libraries and compile them into one file called custom.js. This method is much better then manually attaching all JS files as it reduces http requests.
+The js folder is designed to be used with CodeKit (http://incident57.com/codekit/). CodeKit will take all the included jQuery libraries and compile them into one file called custom.js. This method is much better then manually attaching all JS files as it reduces http requests.
 
 ### LESS
 
