@@ -63,20 +63,3 @@ body {
 .pull(@offset:1) {
 	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
-
-/* ============================ */
-/* = Misc
-/* ============================ */
-
-.gridclear() {
-	*zoom:1;
-	
-	&:before,
-	&:after {
-	    content:"";
-	    display:table;
-	}
-	&:after {
-	    clear:both;
-	}
-}

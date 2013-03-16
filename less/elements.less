@@ -6,8 +6,11 @@
 /* = Fonts
 /* ============================ */
 
+/* Fonts are set using the second technique from here: http://coding.smashingmagazine.com/2013/02/14/setting-weights-and-styles-at-font-face-declaration/ 
+basically, set your font family and then by choosing the weight the browser will load the correct version of that font. This will avoid faux bolding */
+
 @font-face {
-	font-family: 'GillSansRegular';
+	font-family: 'GillSans';
 	src: url('../fonts/GillSans.eot');
 	src: url('../fonts/GillSans.eot?#iefix') format('embedded-opentype'),
 		 url('../fonts/GillSans.woff') format('woff'),
@@ -17,30 +20,66 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: 'GillSansBold';
+	font-family: 'GillSans';
 	src: url('../fonts/GillSansBold.eot');
 	src: url('../fonts/GillSansBold.eot?#iefix') format('embedded-opentype'),
 		 url('../fonts/GillSansBold.woff') format('woff'),
 		 url('../fonts/GillSansBold.ttf') format('truetype'),
 		 url('../fonts/GillSansBold.svg#GillSansRegular') format('svg');
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'GillSansBoldItalic';
+	font-family: 'GillSans';
 	src: url('../fonts/GillSansBoldItalic.eot');
 	src: url('../fonts/GillSansBoldItalic.eot?#iefix') format('embedded-opentype'),
 		 url('../fonts/GillSansBoldItalic.woff') format('woff'),
 		 url('../fonts/GillSansBoldItalic.ttf') format('truetype'),
 		 url('../fonts/GillSansBoldItalic.svg#GillSansBoldItalic') format('svg');
 	font-weight: normal;
-	font-style: normal;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: 'Aller';
+    src: url('../fonts/aller_bd-webfont.eot');
+    src: url('../fonts/aller_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_bd-webfont.woff') format('woff'),
+         url('../fonts/aller_bd-webfont.ttf') format('truetype'),
+         url('../fonts/aller_bd-webfont.svg#allerbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Aller';
+    src: url('../fonts/aller_it-webfont.eot');
+    src: url('../fonts/aller_it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_it-webfont.woff') format('woff'),
+         url('../fonts/aller_it-webfont.ttf') format('truetype'),
+         url('../fonts/aller_it-webfont.svg#alleritalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Aller';
+    src: url('../fonts/aller_rg-webfont.eot');
+    src: url('../fonts/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_rg-webfont.woff') format('woff'),
+         url('../fonts/aller_rg-webfont.ttf') format('truetype'),
+         url('../fonts/aller_rg-webfont.svg#allerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 /* Define heading and body fonts */
 
-@heading: "GillSansRegular", Arial, sans-serif;
-@body: "GillSansRegular", Arial, sans-serif;
+@heading: "GillSans", Arial, sans-serif;
+@body: "Aller", Helvetica, sans-serif;
 
 /* ============================ */
 /* = Pictos
@@ -81,7 +120,7 @@
 
 @link: #009BC2;
 @linkHover: #BA3B0D;
-@linkVisited: #009BC2;
+@linkVisited: #551A8B;
 @linkFocus: #009BC2;
 
 @select: #777;
@@ -173,43 +212,93 @@ ul#pagination{
 /* = Breadcrumbs
 /* ============================ */
 
-#breadcrumbs{
+/* You will need to add the correct Pictos icon letters */
+
+#breadcrumbs, #content #breadcrumbs{
+	.column(12);
 	ul{
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		margin-bottom: 1.5em;
-		color: @grey6;
-		text-transform: uppercase;
 		font-family: @body;
-		font-weight: 300;
+		font-weight:bold;
 		font-size: 11px;
-		max-width: 75%;
+		padding: 0;
+		margin: 0;
+		margin-bottom: 10px;
 		li{
 			display:inline;
 			padding:0;
+			font-size: 1.2em;
+			text-transform: capitalize;
+			color: #CECECE;
 			a{
 				margin-right: 6px;
-				color: @grey6;
+				text-transform: capitalize;
+				color: #CECECE;
 				&:hover, &:focus{
-					color: @grey10;
+					text-decoration: none;
 				}
 			}
 			&:before{
-				content: 'k';
+				content: 't';
 				font-family: 'Pictos Custom';
 				vertical-align: middle;
-				padding-right: 8px;
+				padding: 0 10px;
 				text-transform: none;
 				font-weight: normal;
-				color: #CECEBF;
-				font-size: 1em;
+				font-size: 12px;
 			}
 		}
 		li.home{
 			&:before{
-				content: 'j';
+				padding-left: 0;
+				content: 'u';
+				font-size: 18px;
 			}
 		}
 	}
 }
+
+/* ============================ */
+/* = Basic Button Style
+/* ============================ */
+
+.button{
+	display: inline-block;
+	width: auto;
+	.border-radius(5px);
+	color: @white;
+	font-size: 12px;
+	font-family: @body;
+	padding: 4px 10px 5px 10px;
+	white-space: nowrap;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 2px #333;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;	
+	&:hover{
+		text-decoration: none;
+		color: @white;
+		text-shadow: 0 1px 2px #333;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	&:visited{
+		color: @white;
+	}	
+	>span{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 16px;
+		margin-left: 8px;
+	}
+}
+
+/* ============================ */
+/* = Site-Specific Buttons
+/* ============================ */
+
+/* Add Button Styles Below */
